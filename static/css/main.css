@@ -1,3 +1,24 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  color: #868E96;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #343a40;
+}
+h1 {
+  font-size: 2.5rem;
+}
+a {
+  color: #3F5EFB;
+  text-decoration: none;
+  transition: all 0.8s;
+}
+a:hover {
+  color: #FC466B;
+}
+
 .container {
   padding: 3rem 0;
   display: flex;
@@ -11,18 +32,13 @@
   align-items: center;
   text-align: center;
   background: #fff;
-  width: 360px;
+  width: 440px;
   border-radius: 15px;
-  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   padding-bottom: 3rem;
 }
 .form {
   text-align: left;
-  margin-bottom: 5rem;
+  width: 85%;
 }
 .input-wrap {
   width: 100%;
@@ -37,6 +53,8 @@
 .input {
   outline: none;
   border: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2rem;
   display: block;
   width: 100%;
   height: 3rem;
@@ -55,44 +73,35 @@ input::placeholder {
   font-size: 1rem;
   color: gray;
 }
-.button {
+.button-wrap {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.button-sign {
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding-top: 2rem;
+}
+.button {
   padding: 0 20px;
-  min-width: 160px;
-  height: 50px;
+  min-width: 10rem;
+  height: 3rem;
   background-color: #bd59d4;
-  border-radius: 25px;
-  font-size: 14px;
+  border-radius: 1.8rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #fff;
   line-height: 1.2;
-  text-transform: uppercase;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
-  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.5);
+  transition: all 1s;
+  outline: none !important;
+  border: none;
 }
-.button-sign:hover {
+.button:hover {
   background-color: #4b2354;
-  box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -moz-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -webkit-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -o-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
-  -ms-box-shadow: 0 10px 30px 0px rgba(189, 89, 212, 0.8);
+  cursor: pointer;
 }
-
+.link {
+  padding-top: 5rem;
+}
 
 /* css for landing page */
 .landing-title {
@@ -103,42 +112,7 @@ input::placeholder {
 .landing-img {
   padding-right: 10px;
 }
-.landing-link {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 50px;
-}
 
-/* css for signin page */
-.signin-link {
-}
-.container-menu {
-  padding-top: 1rem;
-  background-color: #F64C72;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-}
-.container-menu ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-.container-menu li {
-  padding-bottom: .6rem;
-}
-.container-menu a {
-  color: #EAE3EA;
-  text-decoration: none;
-}
-.container-menu a:hover {
-  color: #FFFFFF;
-}
-.container-content {
-  padding: 2rem;
-}
 @media (min-width:768px) {
   .container-menu {
     width: 17rem;
@@ -151,29 +125,6 @@ input::placeholder {
     margin-left: 17rem;
     width: 100%;
   }
-}
-body {
-  font-family: 'Rubik', sans-serif;
-  color: #868E96;
-  font-size: 1.2rem;
-  background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
-}
-h1, h2, h3, h4, h5, h6 {
-  color: #343a40;
-}
-h1 {
-  font-size: 2.5rem;
-}
-a {
-  color: #3F5EFB;
-  text-decoration: none;
-  transition: all 0.8s;
-  -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-}
-a:hover {
-  color: #FC466B;
 }
 .profile-pic {
   border-radius: 50%;
