@@ -36,12 +36,7 @@ These instructions will get you a copy of the project up and running on your loc
 If you just want to check this project out, you don't need anything special; just [Git](https://git-scm.com/), [npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org).
 
 
-Anyway, if you want to see how we implement DB-tier, You gonna need to install PostgreSQL or MongoDB.
-
-Check [Deployment](##deployment) for more info
-
-
-https://www.postgresql.org/docs/manualsindex/
+Anyway, if you want to see how we implement DB-tier, You gonna need to install PostgreSQL or MongoDB. Check [Deployment](#deployment) for more info
 
 ### Installing
 
