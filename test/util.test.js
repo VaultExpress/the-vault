@@ -4,11 +4,11 @@ const util = require('../util');
 const fs = require('fs');
 
 describe("./util/index.js - Utility functions", () => {
-  describe("password encrypt functions", () => {
+  describe("password hashing functions", () => {
     let txt = 'demo1';
     let hash = "";
 
-    it("should encrypt plain password", () => {
+    it("should hash plain password", () => {
       hash = util.encrypt(txt);
       expect(hash.length).to.be.equal(60);
     });

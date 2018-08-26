@@ -6,9 +6,9 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const app = express();
 
-const db = require('./db/db-json');
-//const db = require('./db/db-postgres');
-//const db = require('./db/db-mongo');
+const db = require('./db');
+const auth = require('./auth')(db);
+const api = require('./api')(db);
 
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
@@ -29,9 +29,16 @@ app.get("/signin", (req, res)=>{
   res.sendFile(path.join(__dirname+'/pages/signin.html'));
 });
 
+app.use("/api", api);
+
 app.get("/profile", (req, res)=>{
   res.sendFile(path.join(__dirname+'/pages/profile.html'));
 });
+
+app.use((req, res, next) => {
+  res.sendStatus(404);
+});
+
 var listener = app.listen(PORT, HOST,function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });

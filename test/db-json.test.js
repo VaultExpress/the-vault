@@ -51,7 +51,6 @@ describe('DB Json', () => {
   // seed Method
   describe('seed', () => {
     it('should seed the actual db with sample json file', () => {
-      console.log(process.env);
       expect(db.seed().users).to.deep.equal(seed);
     });
   });
