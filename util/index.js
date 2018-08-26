@@ -5,7 +5,7 @@ const uuid = require('./util.uuidv5');
 let util = {};
 
 util.encrypt = (plain_password) => {
-  return bcrypt.hashSync(plain_password, cfg.password_encrypt_salt_rounds);
+  return bcrypt.hashSync(plain_password, cfg.password_hash_salt_rounds);
 };
 
 util.comparePassword = (plain_password, hash_password) => {

@@ -5,7 +5,7 @@ const fs = require('fs');
 
 describe("./util/index.js - Utility functions", () => {
   describe("password hashing functions", () => {
-    let txt = 'demo1';
+    let txt = 'password12345';
     let hash = "";
 
     it("should hash plain password", () => {

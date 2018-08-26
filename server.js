@@ -5,6 +5,8 @@ const helmet = require('helmet');
 const favicon = require('serve-favicon');
 const path = require('path');
 const app = express();
+const session = require("express-session");
+const bodyParser = require("body-parser");
 
 const db = require('./db');
 const auth = require('./auth')(db);
@@ -16,6 +18,16 @@ const HOST = process.env.HOST || '0.0.0.0';
 app.use(helmet());
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
+
+app.use(session({
+  secret: cfg.session_secret,
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/auth', auth);
 
 app.get("/", (req, res)=>{
   res.sendFile(path.join(__dirname+'/pages/landing.html'));

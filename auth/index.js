@@ -6,6 +6,8 @@ const local = require('./local');
 //const google = require('./google');
 
 module.exports = function(db) {
+  router.use(passport.initialize());
+  router.use(passport.session());
 
   passport.serializeUser(function(user, done) {
     done(null, user.id);
@@ -15,7 +17,6 @@ module.exports = function(db) {
     let user = db.findById(id);
     if (user) {
       done(null, user);
-      return null;
     }
   });
 
@@ -23,15 +24,18 @@ module.exports = function(db) {
 //    google(passport, "secrets.google");
 //  }
 
-  local(passport);
+  local(passport, db);
 
-  router.get('/signup', (req, res) => {
+  router.post('/signup', (req, res) => {
     res.send('signup.....');
   });
 
-  router.get('/signin', (req, res) => {
-    res.send('signin.....');
-  });
+  router.post('/signin',
+    passport.authenticate('local', {
+      successRedirect: '/profile',
+      failureRedirect: '/'
+    })
+  );
 
   return router;
 };
