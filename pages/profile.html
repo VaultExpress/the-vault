@@ -8,14 +8,6 @@
     <link href="css/main.css" rel="stylesheet">
     <title>vault-express</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <style type="text/css">
-      @media (max-width: 840px) {
-        .container {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-    </style>
   </head>
   <body>
     <noscript>
@@ -23,14 +15,12 @@
     </noscript>
     <div class="container">
       
-      <div class="pic-wrap slide">
+      <div class="data-box">
         <img src="img/person.png" class="profile-pic"> <!--Give data to 'alt' attribute-->
         <div class="pic-caption">
-          <data title="Your Username">someone786</data>
+          <data class="text-align-center" title="Your Username">someone786</data>
         </div>
-      </div>
       
-      <div class="data-box slide">
         <h1>Profile Info</h1>
         <div class="person-info">
           <div class="info-header">Name</div>
@@ -44,27 +34,6 @@
 
     </div>
 
-    <script>
-
-      $(document).ready(function() {
-        // To Slide Down main container
-        $(".slide").hide();
-        $(".slide").slideDown(1500);
-
-        // To Slide Down repeat password
-        $(".hide").hide();
-        $("input[name='password']").focus(function() {
-          $("#password_repeat").slideDown();
-        });
-
-        // To give
-        $("input").on("focus",function() {
-          $(this).parent().removeClass('input-blur').addClass('input-focus');
-        });
-        $("input").on("blur", function() {
-          $(this).parent().removeClass('input-focus').addClass('input-blur');
-        });
-      });
-    </script>
+    <script src="js/profile.js"></script>
   </body>
 </html>

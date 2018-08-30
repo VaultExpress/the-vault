@@ -28,6 +28,7 @@ a:hover {
   padding: 3rem 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -252,6 +253,12 @@ CSS for Profile Page
   border-radius: 15px;
   padding-bottom: 35px;
 }
+
+.data-box .text-align-center {
+  text-align: center;
+  align-content: center;
+}
+
 
 .info-header {
   text-align: left;
